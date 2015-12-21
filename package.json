@@ -1,0 +1,35 @@
+{
+  "name": "gulp-fontastic",
+  "description": "Get Fontastic font",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metrakit/gulp-fontastic.git"
+  },
+  "author": {
+    "name": "Jordane",
+    "email": "contact@jordane.net",
+    "url": "http://jordane.net"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "gulpplugin"
+  ],
+  "dependencies": {
+    "request": "^2.67.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.7"
+  },
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "license": "MIT",
+  "gitHead": "48e757a90687a8c5bca9d2945285ac0689aa7023",
+  "bugs": {
+    "url": "https://github.com/metrakit/gulp-fontastic/issues"
+  },
+  "homepage": "https://github.com/metrakit/gulp-fontastic#readme"
+}
