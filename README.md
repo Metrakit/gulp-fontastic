@@ -6,7 +6,7 @@ I have make this plugin because for my personnal developments I'm using the Font
 
 ## Usage :
 
-```
+```js
 var fontastic      = require('gulp-fontastic');
 
 gulp.task('fontastic', function() {
@@ -15,6 +15,7 @@ gulp.task('fontastic', function() {
         font_dir: 'public/fonts/',
         font_path: '/fonts/',
         style_path: 'scss/',
+        font_name: 'my-font', // optionnal
         file_name: '_fontastic',
         scss: true
     });
