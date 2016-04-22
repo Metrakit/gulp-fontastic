@@ -24,7 +24,7 @@ module.exports = function(opt) {
     request(url + '.svg').pipe(fs.createWriteStream(opt.font_dir + font_name + '.svg'));
 
     var re = new RegExp(url, 'g');
-    content = content.replace(re, opt.font_path + hash);
+    content = content.replace(re, opt.font_path + font_name);
 
     var extension = "css";
     if (opt.scss === true) {
