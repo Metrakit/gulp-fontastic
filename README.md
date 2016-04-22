@@ -12,8 +12,10 @@ var fontastic      = require('gulp-fontastic');
 gulp.task('fontastic', function() {
     fontastic({
         key: 'your-api-key',
-        font_path: 'fonts/',
+        font_dir: 'public/fonts/',
+        font_path: '/fonts/',
         style_path: 'scss/',
+        file_name: '_fontastic',
         scss: true
     });
 });
