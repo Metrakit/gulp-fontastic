@@ -13,10 +13,15 @@ module.exports = function(opt) {
 
     var url = 'https://file.myfontastic.com/'+ opt.key + '/fonts/' + hash;
 
-    request(url + '.eot').pipe(fs.createWriteStream(opt.font_dir + hash + '.eot'));
-    request(url + '.woff').pipe(fs.createWriteStream(opt.font_dir + hash + '.woff'));
-    request(url + '.ttf').pipe(fs.createWriteStream(opt.font_dir + hash + '.ttf'));
-    request(url + '.svg').pipe(fs.createWriteStream(opt.font_dir + hash + '.svg'));
+    var font_name = hash;
+    if (opt.font_name) {
+      font_name = opt.font_name;
+    }
+
+    request(url + '.eot').pipe(fs.createWriteStream(opt.font_dir + font_name + '.eot'));
+    request(url + '.woff').pipe(fs.createWriteStream(opt.font_dir + font_name + '.woff'));
+    request(url + '.ttf').pipe(fs.createWriteStream(opt.font_dir + font_name + '.ttf'));
+    request(url + '.svg').pipe(fs.createWriteStream(opt.font_dir + font_name + '.svg'));
 
     var re = new RegExp(url, 'g');
     content = content.replace(re, opt.font_path + hash);
