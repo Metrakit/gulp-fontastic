@@ -7,7 +7,7 @@ I have make this plugin because for my personnal developments I'm using the Font
 ## Usage :
 
 ```js
-var fontastic      = require('gulp-fontastic');
+var fontastic = require('gulp-fontastic');
 
 gulp.task('fontastic', function() {
     fontastic({
@@ -15,7 +15,7 @@ gulp.task('fontastic', function() {
         font_dir: 'public/fonts/',
         font_path: '/fonts/',
         style_path: 'scss/',
-        font_name: 'my-font', // optionnal
+        font_name: 'my-font', // (optional) If you precise the font_name so your font file will not have a filename with a hash
         file_name: '_fontastic',
         scss: true
     });
@@ -25,4 +25,3 @@ gulp.task('fontastic', function() {
 ## TODO
 
 - Create fonts and style folders if they doesnt exist
-- Clean the fonts folder before to generate the new fonts
