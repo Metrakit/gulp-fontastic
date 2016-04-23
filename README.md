@@ -23,11 +23,11 @@ var fontastic = require('gulp-fontastic');
 gulp.task('fontastic', function() {
     fontastic({
         key: 'your-api-key', // Your Fontastic API key (e.g. http://app.fontastic.me/#select/{YOU-API-KEY})
-        font_dir: 'public/fonts/', // The location where put the new fonts file from Fontastic
-        font_path: '/fonts/', // The path of your fonts referenced in the stylesheet file
-        style_path: 'scss/', // The path of your styles for put the new stylesheet file from Fontastic
+        font_dir: 'public/fonts/', // (optional) The location where put the new fonts file from Fontastic
+        font_path: '/fonts/', // (optional) The path of your fonts referenced in the stylesheet file
+        style_path: 'scss/', // (optional) The path of your styles for put the new stylesheet file from Fontastic
         font_name: 'my-font', // (optional) If you precise the font_name so your font file will not have a filename with a hash
-        file_name: '_fontastic', // Your SCSS or CSS filename without the extension
+        file_name: '_fontastic', // (optional) Your SCSS or CSS filename without the extension
         scss: true
     });
 });
@@ -36,3 +36,7 @@ gulp.task('fontastic', function() {
 ## TODO
 
 - Create fonts and style folders if they doesnt exist
+
+## Credit
+
+Thanks to [Fontastic](http://fontastic.me)
