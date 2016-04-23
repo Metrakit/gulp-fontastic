@@ -9,7 +9,13 @@ This Gulp plugin will download your fonts from Fontastic webapp (https://app.fon
 
 I have make this plugin because for my personnal developments I'm using the Fontastic CDN when I'm developing then I'm using the fonts in local for the production. So this plugin can get automatically the fonts thanks to your gulp workflow.
 
-## Usage :
+## Install
+
+```
+/npm install gulp-fontastic
+```
+
+## Usage
 
 ```js
 var fontastic = require('gulp-fontastic');
