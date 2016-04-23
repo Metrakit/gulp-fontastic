@@ -12,7 +12,7 @@ I have make this plugin because for my personnal developments I'm using the Font
 ## Install
 
 ```
-/npm install gulp-fontastic
+npm install gulp-fontastic
 ```
 
 ## Usage
