@@ -1,4 +1,9 @@
-# Download your fonts from the awesome Fontastic webapp
+# Gulp-fontastic
+Download your fonts from the awesome [Fontastic](https://app.fontastic.me) webapp.
+
+[![npm](https://img.shields.io/npm/dt/gulp-fontastic.svg)](https://www.npmjs.com/package/gulp-fontastic
+) [![npm](https://img.shields.io/npm/dm/gulp-fontastic.svg)](https://www.npmjs.com/package/gulp-fontastic
+) [![GitHub release](https://img.shields.io/github/release/metrakit/gulp-fontastic.svg)](https://www.npmjs.com/package/gulp-fontastic)
 
 This Gulp plugin will download your fonts from Fontastic webapp (https://app.fontastic.me) and copy in folder the fonts with a hash and the style in .css file or .scss file.
 
