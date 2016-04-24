@@ -1,7 +1,7 @@
 {
   "name": "gulp-fontastic",
   "description": "Get Fontastic font",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/metrakit/gulp-fontastic.git"
@@ -15,11 +15,12 @@
     "index.js"
   ],
   "keywords": [
-    "gulp plugin"
+    "gulp plugin fontastic"
   ],
   "dependencies": {
     "request": "^2.67.0",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "through2": "^2.0.1"
   },
   "devDependencies": {
     "gulp": "^3.8.7"
