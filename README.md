@@ -33,9 +33,9 @@ gulp.task('fontastic', function() {
 });
 ```
 
-## TODO
+## Integration
 
-- Create fonts and style folders if they doesnt exist
+- Elixir integration (Laravel 5) : https://github.com/Metrakit/laravel-elixir-fontastic
 
 ## Credit
 
