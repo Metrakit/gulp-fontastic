@@ -3,7 +3,7 @@
 var fs = require('fs');
 var request = require('request');
 var _ = require('underscore');
-var transform   = require('stream').Transform;
+var through = require('through2'); 
 
 var PLUGIN_NAME = 'gulp-fontastic';
 
@@ -13,15 +13,15 @@ var options = {
     font_path: '/fonts/',
     style_path: 'scss/',
     font_name: 'fontastic',
+    file_name: '_fontastic',
     scss: true
 };
 
 module.exports = function(opt) {
 
-    var stream = new transform({objectMode: true});
+    options = _.extend(options, opt);
 
-    stream._transform = function (file, encoding, cb) {
-        options = _.extend(options, opt);
+    function transform(file, encoding, cb) {
         request('https://file.myfontastic.com/' + options.key + '/icons.css', function (error, response, body) {
 
             var content = response.body;
@@ -48,9 +48,9 @@ module.exports = function(opt) {
                 extension = "scss";
             }
 
-            fs.writeFile(options.style_path + options.file_name + '.' + extension, content);
-            cb();
+            return fs.writeFile(options.style_path + options.file_name + '.' + extension, content);
         });
-    };
-    return stream;
+        return cb();
+    }
+    return through.obj(transform);
 };
