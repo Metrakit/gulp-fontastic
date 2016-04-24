@@ -1,7 +1,7 @@
 {
   "name": "gulp-fontastic",
   "description": "Get Fontastic font",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/metrakit/gulp-fontastic.git"

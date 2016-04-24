@@ -4,6 +4,7 @@ var fs = require('fs');
 var request = require('request');
 var _ = require('underscore');
 var through = require('through2'); 
+var mkdirp = require('mkdirp');
 
 var PLUGIN_NAME = 'gulp-fontastic';
 
@@ -12,7 +13,6 @@ var options = {
     font_dir: 'public/fonts/',
     font_path: '/fonts/',
     style_path: 'scss/',
-    font_name: 'fontastic',
     file_name: '_fontastic',
     scss: true
 };
@@ -22,6 +22,8 @@ module.exports = function(opt) {
     options = _.extend(options, opt);
 
     function transform(file, encoding, cb) {
+        mkdirp(options.font_dir);
+        mkdirp(options.style_path);
         request('https://file.myfontastic.com/' + options.key + '/icons.css', function (error, response, body) {
 
             var content = response.body;
