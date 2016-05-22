@@ -34,9 +34,10 @@ module.exports = function(opt) {
             var url = 'https://file.myfontastic.com/'+ options.key + '/fonts/' + hash;
 
             var font_name = hash;
-            var font_name_file = hash;
+            var font_name_file = font_name;
             if (options.font_name) {
                 font_name = options.font_name;
+                font_name_file = font_name;
                 if (options.hashable) {
                     font_name_file = font_name_file + '-' + hash;
                 }
@@ -51,8 +52,8 @@ module.exports = function(opt) {
             content = content.replace(re, options.font_path + font_name);
             
             if (options.hashable) {
-                re = new RegExp(font_name + '.', 'g');
-                content = content.replace(re, font_name_file + '.');
+                var re2 = new RegExp(font_name + '[.]{1}', 'g');
+                content = content.replace(re2, font_name_file + '.');
             }
 
             var extension = "css";
