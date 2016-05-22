@@ -14,7 +14,8 @@ var options = {
     font_path: '/fonts/',
     style_path: 'scss/',
     file_name: '_fontastic',
-    scss: true
+    scss: true,
+    hashable: false
 };
 
 module.exports = function(opt) {
@@ -33,17 +34,26 @@ module.exports = function(opt) {
             var url = 'https://file.myfontastic.com/'+ options.key + '/fonts/' + hash;
 
             var font_name = hash;
+            var font_name_file = hash;
             if (options.font_name) {
                 font_name = options.font_name;
+                if (options.hashable) {
+                    font_name_file = font_name_file + '-' + hash;
+                }
             }
 
-            request(url + '.eot').pipe(fs.createWriteStream(options.font_dir + font_name + '.eot'));
-            request(url + '.woff').pipe(fs.createWriteStream(options.font_dir + font_name + '.woff'));
-            request(url + '.ttf').pipe(fs.createWriteStream(options.font_dir + font_name + '.ttf'));
-            request(url + '.svg').pipe(fs.createWriteStream(options.font_dir + font_name + '.svg'));
+            request(url + '.eot').pipe(fs.createWriteStream(options.font_dir + font_name_file + '.eot'));
+            request(url + '.woff').pipe(fs.createWriteStream(options.font_dir + font_name_file + '.woff'));
+            request(url + '.ttf').pipe(fs.createWriteStream(options.font_dir + font_name_file + '.ttf'));
+            request(url + '.svg').pipe(fs.createWriteStream(options.font_dir + font_name_file + '.svg'));
 
             var re = new RegExp(url, 'g');
             content = content.replace(re, options.font_path + font_name);
+            
+            if (options.hashable) {
+                re = new RegExp(font_name + '.', 'g');
+                content = content.replace(re, font_name_file + '.');
+            }
 
             var extension = "css";
             if (options.scss === true) {
