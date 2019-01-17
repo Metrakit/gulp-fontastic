@@ -61,7 +61,9 @@ module.exports = function(opt) {
                 extension = "scss";
             }
 
-            return fs.writeFile(options.style_path + options.file_name + '.' + extension, content);
+            return fs.writeFile(options.style_path + options.file_name + '.' + extension, content, function(err) {
+                if (err) throw err;
+            });
         });
         return cb();
     }
